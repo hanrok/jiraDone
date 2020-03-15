@@ -1,0 +1,12 @@
+.removeButton {
+	height: 32px;
+	border: none;
+	color: rgb(80, 95, 121);
+	cursor: pointer;
+	font-family: system-ui;
+	font-size: 14px;
+}
+
+.removeButton:hover {
+	background: rgb(236,237,240);
+}
