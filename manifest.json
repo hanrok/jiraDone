@@ -5,17 +5,20 @@
 	"permissions": [
 		"storage",
 		"declarativeContent",
-		"activeTab"
+		"tabs",
+		"webNavigation",
+		"activeTab",
+		"*://*.atlassian.net/jira/*"
 	],
 	"content_scripts": [{
 		"run_at" : "document_idle",
-		"matches": ["*://*.atlassian.net/jira/*backlog"],
+		"matches": ["*://*.atlassian.net/jira/*"],
 		"js": ["remover.js"],
 		"css": ["remover.css"]
 	}],
+
 	"background": {
-		"scripts": ["main.js"],
-		"persistent": false
+		"scripts": ["main.js"]
 	},
 	"manifest_version": 2
 }

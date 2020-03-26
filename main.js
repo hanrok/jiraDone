@@ -1,11 +1,7 @@
-chrome.runtime.onInstalled.addListener(function() {
-	chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-		chrome.declarativeContent.onPageChanged.addRules([{
-			conditions: [new chrome.declarativeContent.PageStateMatcher({
-				pageUrl: {hostEquals: 'atlassian.net', pathContains: 'backlog'},
-			})],
-			actions: [new chrome.declarativeContent.ShowPageAction()]
-		}]);
+chrome.webNavigation.onHistoryStateUpdated.addListener(function (details) {
+	chrome.tabs.getSelected(null, function (currentTab) {
+		if (currentTab && currentTab.url && currentTab.url.includes("backlog")) {
+			chrome.tabs.executeScript(currentTab.id, {file: "remover.js"});
+		}
 	});
 });
-
