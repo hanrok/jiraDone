@@ -1,6 +1,6 @@
 {
 	"name": "JiraDone",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Extension to remove done items from backlog",
 	"permissions": [
 		"storage",
