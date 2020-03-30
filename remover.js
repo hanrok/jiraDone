@@ -54,8 +54,10 @@ function defineIndicatorButton() {
 }
 
 function main() {
-	console.log("remover is running RIGHT NOW REMOVER!! KILL THEM ALL");
-	if (document.querySelectorAll(".JiraDone-indicator").length !== 0) {
+	if (
+		document.querySelectorAll(".JiraDone-indicator").length !== 0 ||
+		document.querySelectorAll(".jira-done-remove-button").length !== 0) {
+
 		console.log("JiraDone: toggle button already defined");
 		return;
 	}
